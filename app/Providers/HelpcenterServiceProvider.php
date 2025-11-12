@@ -2,8 +2,19 @@
 
 namespace Modules\Helpcenter\Providers;
 
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Blog\Models\Article;
+use Modules\Documents\Models\Document;
+use Modules\Helpcenter\Models\Faq;
+use Modules\Helpcenter\Models\Tag;
+use Modules\Maps\Models\MapLayer;
+use Modules\Maps\Models\MapObject;
+use Modules\Pages\Models\Page;
+use Modules\People\Models\Person;
+use Modules\Residency\Models\Shed;
+use Modules\Workshops\Models\Workshop;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -27,6 +38,11 @@ class HelpcenterServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+
+        Relation::enforceMorphMap([
+            'tag'     => Tag::class,
+            'faq'     => Faq::class,
+        ]);
     }
 
     /**

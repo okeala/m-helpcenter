@@ -3,11 +3,11 @@
 namespace Modules\Helpcenter\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\TagResource;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
+use Modules\Helpcenter\Http\Resources\TagResource;
 use Modules\Helpcenter\Models\Tag;
 
 class APITagController extends Controller

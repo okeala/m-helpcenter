@@ -1,6 +1,11 @@
 {
     "name": "okeala/m-helpcenter",
     "description": "",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
     "authors": [
         {
             "name": "Steph",
@@ -9,7 +14,9 @@
     ],
     "extra": {
         "laravel": {
-            "providers": [],
+            "providers": [
+                "Modules\\Helpcenter\\Providers\\RouteServiceProvider"
+            ],
             "aliases": {
 
             }
@@ -26,5 +33,7 @@
         "psr-4": {
             "Modules\\Helpcenter\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
