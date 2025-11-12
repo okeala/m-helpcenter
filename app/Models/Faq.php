@@ -55,4 +55,5 @@ class Faq extends Model
     {
         return \Modules\Helpcenter\Database\Factories\FaqFactory::new();
     }
+
 }
